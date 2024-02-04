@@ -33,9 +33,11 @@ e-commerce-system-Rest-api-master
 │   ├── Postman_collection
 │   ├── src                        
 │   │   ├── models                 // modles for product is defined here
-│   │   |   └── product.js           
-│   │   └── routes                  // routes are defined here 
-│   │       └── productRoutes.js              
+│   │   |   └── product.js
+│   │   ├── routes                 // routes are defined here 
+│   │   |   └── productRoutes.js            
+│   │   └── tests                  //  test cases are written here 
+│   │       └── test.js              
 │   │           
 │   ├── package-lock.json
 │   ├── package.json
