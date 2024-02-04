@@ -12,7 +12,7 @@ go https://github.com/MMM192/e-commerce-system-Rest-api.git
 
 ```go
 # Installation
---> cd e-commerce-system-Rest-api-master
+--> cd e-commerce-system-Rest-api-main
 --> npm install
 run
 --> npm run dev
