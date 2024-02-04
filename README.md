@@ -80,7 +80,8 @@ Postman Documentation  -  https://documenter.getpostman.com/view/21886136/2s9Yyw
 ## Note -
 ```bash
 # Note -
-go https://github.com/MMM192/e-commerce-system-Rest-api.git
+* i have written test cases for every URL 
+* you can modify test.js file and modify test cases and generate your own test cases
 ```
 
 
