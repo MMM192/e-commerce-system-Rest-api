@@ -1,0 +1,255 @@
+{
+	"info": {
+		"_postman_id": "054cdb9f-abd1-4b0a-97fd-8d4fc6bd7cc5",
+		"name": "Rest-api-e-commerce",
+		"description": "Welcome to the E-Commerce API documentation.\n\nThis comprehensive guide will walk you through the various endpoints and functionalities provided by our RESTful API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21886136"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "add new product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Quantum Smartwatch\",\r\n  \"description\": \"A stylish smartwatch with advanced quantum computing capabilities for seamless connectivity and enhanced performance.\",\r\n  \"price\": 199.99,\r\n  \"variants\": [\r\n    {\r\n      \"name\": \"Silver Edition\",\r\n      \"sku\": \"QSW-SE-001\",\r\n      \"additionalCost\": 15.99,\r\n      \"stockCount\": 100\r\n    },\r\n    {\r\n      \"name\": \"Gold Edition\",\r\n      \"sku\": \"QSW-GE-002\",\r\n      \"additionalCost\": 18.99,\r\n      \"stockCount\": 75\r\n    }\r\n  ]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "- this is an base URL for **e-commerce system**\n    \n- here you can add new product\n    \n- and It will be stored on MongoDB atlas"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all existing  products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products"
+							]
+						},
+						"description": "it will return all existing data stored in mangoDB atlas"
+					},
+					"response": []
+				},
+				{
+					"name": "search product by name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/products/search?name=Quantum Smartwatch",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Quantum Smartwatch"
+								}
+							]
+						},
+						"description": "serch product by product name\n\n- you need pass the name of product in Post URL format\n- in postman set params 'key = name' and 'value = product name'"
+					},
+					"response": []
+				},
+				{
+					"name": "Update product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n          \"name\": \"Eco-friendly Bamboo Laptop Stand\",\r\n        \"description\": \"A sustainable and adjustable laptop stand made from bamboo, perfect for ergonomic use and reducing environmental impact.\",\r\n        \"price\": 85.56\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/products/name/Eco-friendly Bamboo Laptop Stand",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"name",
+								"Eco-friendly Bamboo Laptop Stand"
+							]
+						},
+						"description": "- to update product you need to pass the name of the product in format of path parameters\n    \n\n- eg /products/name/:productName\n- replace the productName withe your actual product name\n- eg - [http://localhost:5001/api/products/name/Eco-friendly](http://localhost:5001/api/products/name/Eco-friendly) Bamboo Laptop Stand"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/products/name/High-Capacity Solar Power Bank",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"name",
+								"High-Capacity Solar Power Bank"
+							]
+						},
+						"description": "Delete product by name\n\n- you can delete the product object by passing name of product in path parameters format\n- eg - /products/name/:productName\n- replace the productName = actual name of your product\n- eg - [http://localhost:5001/api/products/name/High-Capacity](http://localhost:5001/api/products/name/High-Capacity) Solar Power Bank"
+					},
+					"response": []
+				}
+			],
+			"description": "Perform opration on Product , POST , GET , PUT , DELETE"
+		},
+		{
+			"name": "variant",
+			"item": [
+				{
+					"name": "add new variant in existing product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n                \"name\": \"large Size\",\r\n                \"sku\": \"BLS-RS-003\",\r\n                \"additionalCost\": 10.99,\r\n                \"stockCount\": 10\r\n            }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/products/Eco-friendly Bamboo Laptop Stand/variants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"Eco-friendly Bamboo Laptop Stand",
+								"variants"
+							]
+						},
+						"description": "- here you can add new variant\n- just replace productName withe the existing product name where you want to add new variant\n- eg - /products/:productName/variants\n- \\-[http://localhost:5001/api/products/Eco-friendly](http://localhost:5001/api/products/Eco-friendly) Bamboo Laptop Stand/variants"
+					},
+					"response": []
+				},
+				{
+					"name": "Update variant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n           \"name\": \"Regular Size\",\r\n                \"sku\": \"BLS-RS-003\",\r\n                \"additionalCost\": 7.99,\r\n                \"stockCount\": 220\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/api/products/name/Eco-friendly Bamboo Laptop Stand/variant/Regular Size",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"name",
+								"Eco-friendly Bamboo Laptop Stand",
+								"variant",
+								"Regular Size"
+							]
+						},
+						"description": "- update variant by passing product name and variant name in URL (path parameters)\n- /products/name/:productName/variant/:variantName\n- replace productName = actual name of product\n- replace variantName= actual name of variant"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete variant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/api/products/variants?productName=Eco-friendly Bamboo Laptop Stand&variantName=Compact Size",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"api",
+								"products",
+								"variants"
+							],
+							"query": [
+								{
+									"key": "productName",
+									"value": "Eco-friendly Bamboo Laptop Stand"
+								},
+								{
+									"key": "variantName",
+									"value": "Compact Size"
+								}
+							]
+						},
+						"description": "- /products/variants\n- you need pass the productName and variantName in Post URL format\n    \n- in postman set params\n    \n- /products/variants\n    \n- \\--> 'key = productName ' and 'value = product name'\n    \n- \\--> 'key = variantName ' and 'value = variant name'"
+					},
+					"response": []
+				}
+			],
+			"description": "Perform opration on variant ,POST, PUT , DELETE"
+		}
+	]
+}
