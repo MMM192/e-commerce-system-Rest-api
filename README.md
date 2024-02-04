@@ -78,7 +78,10 @@ Postman Documentation  -  https://documenter.getpostman.com/view/21886136/2s9Yyw
 
 
 ## Note -
-*sdsc
+```bash
+# Note -
+go https://github.com/MMM192/e-commerce-system-Rest-api.git
+```
 
 
  
