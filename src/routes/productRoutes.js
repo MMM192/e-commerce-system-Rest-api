@@ -86,13 +86,13 @@ router.put('/products/name/:productName', async (req, res) => {
         } else {
             res.json({ message: 'Products updated successfully', updatedProducts: result });
 
-            res.send(result);
 
         }
     } catch (error) {
         res.status(500).json({ error: error.message });
     }
 });
+
 
 
 
