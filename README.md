@@ -14,8 +14,12 @@ go https://github.com/MMM192/e-commerce-system-Rest-api.git
 # Installation
 --> cd e-commerce-system-Rest-api-main
 --> npm install
-run
+
+#run server
 --> npm run dev
+
+#run test cases
+--> npm test
 
 # API PORT : 5001
 # Base URL : http://localhost:5001/api/products
