@@ -1,5 +1,4 @@
 #  REST API for an e-commerce system
-A RESTful API example for simple  e-commerce system  with Go
 
 It is a example for making simple RESTful API for e-commerce system using **Node Js**  and **MangoDB** (Atlas)
 
